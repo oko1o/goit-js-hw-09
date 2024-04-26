@@ -10,7 +10,6 @@ const inputEvent = formEl.addEventListener('input', event => {
     email: formEl.elements.email.value.trim(),
     message: formEl.elements.message.value.trim(),
   };
-  console.log(formData);
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 });
 
