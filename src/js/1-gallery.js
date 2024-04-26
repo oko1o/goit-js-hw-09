@@ -83,5 +83,5 @@ const galleryMarkup = images
   )
   .join('');
 
-export const galleryHtml = galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup);
-export const lightBox = new SimpleLightbox('.gallery-item a', { captions: true, captionsData: "alt", captionDelay: 250 });
+const galleryHtml = galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup);
+const lightBox = new SimpleLightbox('.gallery-item a', { captions: true, captionsData: "alt", captionDelay: 250 });

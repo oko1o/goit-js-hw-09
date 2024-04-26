@@ -1,11 +1,11 @@
-export const addFont = document.head.insertAdjacentHTML(
+const addFont = document.head.insertAdjacentHTML(
   'beforeend',
   '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>'
 );
 
 const formEl = document.querySelector('.feedback-form');
 
-export const inputEvent = formEl.addEventListener('input', event => {
+const inputEvent = formEl.addEventListener('input', event => {
   const formData = {
     email: formEl.elements.email.value.trim(),
     message: formEl.elements.message.value.trim(),
@@ -14,7 +14,7 @@ export const inputEvent = formEl.addEventListener('input', event => {
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 });
 
-export const checkStorage = window.addEventListener('load', () => {
+const checkStorage = window.addEventListener('load', () => {
   const storedData = localStorage.getItem('feedback-form-state');
   if (storedData) {
     const { email, message } = JSON.parse(storedData);
@@ -23,7 +23,7 @@ export const checkStorage = window.addEventListener('load', () => {
   }
 });
 
-export const submitForm = formEl.addEventListener('submit', event => {
+const submitForm = formEl.addEventListener('submit', event => {
   const emailValue = formEl.elements.email.value.trim();
   if (emailValue.includes('@') && emailValue.includes('.')) {
     event.preventDefault();
