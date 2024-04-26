@@ -1,0 +1,16 @@
+.gallery {
+    margin: 0 auto;
+    width: 1128px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  
+  .gallery-image {
+    width: 360px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-image:hover {
+      transform: scale(1.04);
+  }
