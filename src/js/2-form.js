@@ -24,7 +24,13 @@ const checkStorage = window.addEventListener('load', () => {
 
 const submitForm = formEl.addEventListener('submit', event => {
   const emailValue = formEl.elements.email.value.trim();
-  if (emailValue.includes('@') && emailValue.includes('.')) {
+  const messageValue = formEl.elements.message.value.trim();
+  if (
+    emailValue.includes('@') &&
+    emailValue.includes('.') &&
+    emailValue &&
+    messageValue
+  ) {
     event.preventDefault();
     const formData = {
       email: formEl.elements.email.value.trim(),
@@ -35,6 +41,6 @@ const submitForm = formEl.addEventListener('submit', event => {
     console.log(formData);
   } else {
     event.preventDefault();
-    alert('Type valid email');
+    alert('Type valid email and message');
   }
 });
